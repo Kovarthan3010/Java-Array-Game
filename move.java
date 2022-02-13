@@ -56,13 +56,55 @@ static Random rn=new Random();
 				gn.getvalues();
 				break;
 			case 2:
+				int player_current_x2=gn.getplayer_x();
+				int player_current_y2=gn.getplayer_y();
+				System.out.println("Current position of player is X : "+player_current_x2+" Y : "+player_current_y2);
+				int newvalue_x2=player_current_x2+moves;
+				if(newvalue_x2>9)
+				{
+					newvalue_x2=9;
+				}
+				System.out.println("Now moving the player to position of X : "+newvalue_x2+" Y :"+player_current_y2);
+				gn.setvalues(player_current_x2, player_current_y2, 0);
+				gn.setvalues(newvalue_x2, player_current_y2, 5);
+				gn.getvalues();
 				break;
 			case 3:
+				int player_current_x3=gn.getplayer_x();
+				int player_current_y3=gn.getplayer_y();
+				System.out.println("Current position of player is X : "+player_current_x3+" Y : "+player_current_y3);
+				int newvalue_y3=player_current_y3-moves;
+				if(newvalue_y3<1)
+				{
+					newvalue_y3=1;
+				}
+				System.out.println("Now moving the player to position of X : "+player_current_x3+" Y :"+newvalue_y3);
+		
+				gn.setvalues(player_current_x3, player_current_y3, 0);
+				gn.setvalues(player_current_x3, newvalue_y3, 5);
+				gn.getvalues();
 				break;
 			case 4:
+				int player_current_x4=gn.getplayer_x();
+				int player_current_y4=gn.getplayer_y();
+				System.out.println("Current position of player is X : "+player_current_x4+" Y : "+player_current_y4);
+				int newvalue_y4=player_current_y4+moves;
+				if(newvalue_y4>8)
+				{
+					newvalue_y4=8;
+				}
+				System.out.println("Now moving the player to position of X : "+player_current_x4+" Y :"+newvalue_y4);
+				gn.setvalues(player_current_x4, player_current_y4, 0);
+				gn.setvalues(player_current_x4, newvalue_y4, 5);
+				gn.getvalues();
 				break;
 			}
-			flag=true;
+			if(dest_x==gn.getplayer_x()&&dest_y==gn.getplayer_y())
+			{
+				System.out.println("Game over");
+				flag=true;
+			}
+			
 		}
 	}
 
